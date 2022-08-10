@@ -1,7 +1,0 @@
-version: project.openshift.io/v1
-kind: ProjectRequest
-metadata:
-  name: opencart
-  annotations:
-    argocd.argoproj.io/hook: PreSync
-
