@@ -11,6 +11,8 @@ helmCharts:
       auth:
         rootPassword: root
         password: opencart
+    updateStrategy:
+      type: Recreate
   releaseName: opencart
   version: 12.3.1
   repo: https://charts.bitnami.com/bitnami
