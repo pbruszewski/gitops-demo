@@ -13,26 +13,29 @@ helmCharts:
   version: 12.3.1
   repo: https://charts.bitnami.com/bitnami
 
+resources:
+- base/route.yaml
+
 namespace: opencart
 
 patchesJson6902:
-  - target:
-      group: apps
-      version: v1
-      kind: StatefulSet
-      name: opencart-mariadb
-    patch: |-
-      - op: remove
-        path: /spec/template/spec/securityContext
-      - op: remove
-        path: /spec/template/spec/containers/0/securityContext
-  - target:
-      group: apps
-      version: v1
-      kind: Deployment
-      name: opencart
-    patch: |-
-      - op: remove
-        path: /spec/template/spec/securityContext
-      - op: remove
-        path: /spec/template/spec/containers/0/securityContext
+- target:
+    group: apps
+    version: v1
+    kind: StatefulSet
+    name: opencart-mariadb
+  patch: |-
+    - op: remove
+      path: /spec/template/spec/securityContext
+    - op: remove
+      path: /spec/template/spec/containers/0/securityContext
+- target:
+    group: apps
+    version: v1
+    kind: Deployment
+    name: opencart
+  patch: |-
+    - op: remove
+      path: /spec/template/spec/securityContext
+    - op: remove
+      path: /spec/template/spec/containers/0/securityContext
