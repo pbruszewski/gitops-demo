@@ -6,6 +6,9 @@ helmCharts:
   includeCRDs: false
   valuesInline:
     opencartHost: opencart
+    opencartPassword: user
+    mariadb.auth.rootPassword: root
+    mariadb.auth.password: opencart
   releaseName: opencart
   version: 12.3.1
   repo: https://charts.bitnami.com/bitnami
