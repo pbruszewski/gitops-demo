@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: opencart-namespace
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    path: cluster-wide/opencart
+    repoURL: 'https://github.com/kincl/gitops-demo.git'
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}

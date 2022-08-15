@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: argocd
+spec:
+  extraConfig:
+    kustomize.buildOptions: '--enable-helm'
+  rbac:
+    defaultPolicy: ''
+    policy: |
+      g, cluster-admins, role:admin
+    scopes: '[groups]'
+  resourceExclusions: |
+    - apiGroups:
+      - tekton.dev
+      clusters:
+      - '*'
+      kinds:
+      - TaskRun
+      - PipelineRun  
+  server:
+    route:
+      enabled: true
+      tls:
+        termination: reencrypt
+  sso:
+    dex:
+      openShiftOAuth: true
+    provider: dex
