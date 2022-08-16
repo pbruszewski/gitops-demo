@@ -1,0 +1,13 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  labels:
+    app: bluegreen
+  name: bluegreen
+spec:
+  to:
+    kind: Service
+    name: bluegreen
+    weight: 100
+  port:
+    targetPort: http
