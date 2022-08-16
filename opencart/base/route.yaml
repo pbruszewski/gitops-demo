@@ -3,11 +3,10 @@ apiVersion: route.openshift.io/v1
 metadata:
   name: opencart
 spec:
-  host: opencart.apps.rosa-k25hj.wp7d.p1.openshiftapps.com
+  host: opencart.apps.rosa-k25hj.1age.p1.openshiftapps.com
   to:
     kind: Service
     name: opencart
     weight: 100
   port:
     targetPort: http
-
