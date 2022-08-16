@@ -15,7 +15,7 @@ spec:
         app: bluegreen
     spec:
       containers:
-      - image: quay.io/kincl/bluegreen:latest
+      - image: quay.io/jkincl/bluegreen:latest
         name: bluegreen
         env:
           - name: COLOR
