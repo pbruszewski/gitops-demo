@@ -5,7 +5,7 @@ helmCharts:
 - name: opencart
   includeCRDs: false
   valuesInline:
-    opencartHost: opencart.apps.rosa-k25hj.wp7d.p1.openshiftapps.com
+    opencartHost: opencart.apps.rosa-k25hj.1age.p1.openshiftapps.com
     opencartPassword: user
     mariadb:
       auth:
