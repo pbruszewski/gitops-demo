@@ -19,4 +19,4 @@ spec:
         name: bluegreen
         env:
           - name: COLOR
-            value: cyan
+            value: lime
