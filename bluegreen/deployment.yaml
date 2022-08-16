@@ -18,4 +18,5 @@ spec:
       - image: quay.io/kincl/bluegreen:latest
         name: bluegreen
         env:
-          COLOR: cyan
+          - name: COLOR
+            value: cyan
