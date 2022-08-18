@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-http
+  labels:
+    app: python-http
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-http
+  template:
+    metadata:
+      labels:
+        app: python-http
+    spec:
+      terminationGracePeriodSeconds: 1
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/openshift/python:latest
+        command:
+        - python3
+        - /application/app.py
+        name: python
+        volumeMounts:
+        - name: app
+          mountPath: /application
+      volumes:
+      - name: app
+        configMap:
+          name: python-http
