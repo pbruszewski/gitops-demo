@@ -3,6 +3,8 @@ kind: ArgoCD
 metadata:
   name: argocd
 spec:
+  controller:
+    appSync: 1m
   extraConfig:
     kustomize.buildOptions: '--enable-helm'
   rbac:
