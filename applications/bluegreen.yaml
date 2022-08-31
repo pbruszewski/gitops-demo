@@ -13,4 +13,6 @@ spec:
     path: bluegreen
     repoURL: https://github.com/kincl/gitops-demo.git
     targetRevision: HEAD
-  syncPolicy: {}
+  syncPolicy:
+    automated:
+      selfHeal: true
