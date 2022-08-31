@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bluegreen
+  namespace: myproject-gitops
+spec:
+  destination:
+    namespace: myproject-gitops
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory: {}
+    path: bluegreen
+    repoURL: https://github.com/kincl/gitops-demo.git
+    targetRevision: HEAD
+  syncPolicy: {}
