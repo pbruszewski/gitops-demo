@@ -3,7 +3,7 @@ apiVersion: route.openshift.io/v1
 metadata:
   name: opencart
 spec:
-  host: opencart.apps.test-aws-east.sandbox1725.opentlc.com
+  host: opencart.apps.cluster-4ntr9.4ntr9.sandbox1425.opentlc.com
   to:
     kind: Service
     name: opencart
