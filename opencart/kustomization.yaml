@@ -5,7 +5,7 @@ helmCharts:
 - name: opencart
   includeCRDs: false
   valuesInline:
-    opencartHost: opencart.apps.test-aws-east.sandbox1725.opentlc.com
+    opencartHost: opencart.apps.cluster-4ntr9.4ntr9.sandbox1425.opentlc.com
     opencartPassword: user
     mariadb:
       auth:
